@@ -59,7 +59,7 @@ var initDb = function(callback) {
 };
 
 
-app.use(express.static('site'))
+app.use('/app', express.static(path.join(__dirname, 'site')))
 
 
 app.get('/', function (req, res) {
