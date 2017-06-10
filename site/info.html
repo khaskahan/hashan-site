@@ -1,0 +1,228 @@
+<html style="margin: 0px; padding: 0px;">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    ></link>
+
+    <link
+        rel="stylesheet"
+        href="app.css"
+    ></link>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+</head>
+
+<body
+    style="margin: 0px; padding: 0px;"
+    ng-app="hashan"
+    ng-controller="infoCtrl"
+>
+    <div style="text-align:center;     background-color: #3d50a2;  background-image: url(images/background-list.png);  padding-top:20px">
+        <span style="width:90%; background:cornsilk; display:inline-block; padding: 20px">
+            <div style="font-size:25px; text-align:center">{{coupon}}</div>
+
+            <!-- <img src="images/1.jpg" style="width:40%; float:right" /> -->
+            <div style="width:60%; height: 350px; background: lightblue; float:right; background: url(images/1.jpg); background-size: cover;"></div>
+            <div style="width:38%; height:350px; background:#ddd; padding:10px">
+                <span style="    line-height: 50px; display:inline-block; border-bottom:1px solid #eee; width:100%; text-align:center; font-weight: bold; font-size: 23px" > <span>&#8362;</span> <span>550</span> <span>:מחיר</span> </span>
+                 <span style="    line-height: 50px; display:inline-block; border-bottom:1px solid #eee; width:100%; text-align:center;  font-size: 19px" >                   
+                     <div style="display:inline-block">
+                        <span style="">{{500}}%</span> 
+                        <span style="margin-right:40px">:חיסכון</span> 
+                     </div>
+                     
+                     <div style="display:inline-block">
+                        <span>&#8362;</span> 
+                        <span style="text-decoration: line-through">1550</span> 
+                        <span>:מחיר לפני הנחה</span> 
+                     </div>
+                </span>
+
+                <span style="display:inline-block; width:100%; text-align:right; line-height:25px" ng-repeat="option in priceOptions">
+                    {{option}}<input name="optionPrice" ng-checked="$first" type="radio"/>
+                </span>
+
+                <div style=" border-bottom:1px solid #eee;">&nbsp</div>
+
+                <div style="    line-height: 80px; text-align: right;">
+                    <span>נשאר רק 20 מוצרים מתוך 120</span>
+                    <button ng-click="print()" style="font-size: 35px; width: 100px;">קנה</button>
+                </div>
+
+            </div>
+        </span>
+
+        <div
+            class="description-section"
+            style="direction: rtl; padding: 20px; width: 55%;float: right; padding-right: 50px;"
+        >
+            <div class="title">תיאור העסקה</div>
+
+            <div class="content">
+                <div style="text-align: justify;">
+                    <strong>
+                        <span style="color:#000000">
+                            <span style="font-size:14px">
+                                מופע שקיעה של להקת תיסלם ב
+
+                                <span dir="RTL">פארק מיני ישראל, לטרון,&nbsp;</span>
+
+                                כולל כניסה חופשית לפארק, שנפתח כשעה וחצי לפני תחילת המופע ומציע סיור חופשי, פעילויות ואטרקציות:
+                            </span>
+                        </span>
+                    </strong>
+                </div>
+
+                <ul>
+                    <li style="text-align:justify">
+                        <div>
+                            <span style="color:#000000">
+                                <span style="font-size:14px">
+                                    <span dir="RTL">
+                                        כרטיס ליחיד ב-109 ₪ בלבד במקום 164 ₪
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li style="text-align:justify">
+                        <div>
+                            <span style="color:#000000">
+                                <span style="font-size:14px">
+                                    כרטיס זוגי&nbsp;
+
+                                    <span dir="RTL">ב-215 ₪ בלבד במקום 328 ₪</span>
+                                </span>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div style="text-align: justify;">
+                    <br>
+
+                    <span style="color:#000000">
+                        <span style="font-size:18px">
+                            <strong>תיסלם</strong>
+                        </span>
+
+                        <br>
+
+                        <span style="font-size:14px">
+                            מופע רוקנ'רול לכל המשפחה, המתקיים במסגרת פסטיבל "בצאת הכוכבים" – קיץ של מופעי שקיעה באמפי פארק מיני ישראל.&nbsp;תיסלם ידועה בהופעות החיות המשובחות שלה.&nbsp;האנרגיה, הכישרון, וחשוב מכל, כמות הלהיטים העצומה שעומדים במבחן הזמן, יום יום.&nbsp;כל זה מגיע, ארוז שלם באיכויות ההפקה הגבוהות והמוקפדות ביותר בארץ.
+
+                            <br>
+                            <br>
+                            בשנתיים האחרונות התגברה הדרישה להופעות של הלהקה, שהקפידה להציץ מדי פעם, בעיקר בהופעות תרומה לקהילה ומופעים סגורים ,או כשהגעגוע גבר…&nbsp;הביקוש בעקבות הבאזז שצמח מאלה ש"זכו" להיות בהופעה בקיסריה, הביא את הלהקה להחלטה להמשיך ולעלותבקיץ הקרוב על הבמה עם ההפקה החדשה.
+
+                            <br>
+                            <br>
+                            המופע החדש הלהיטים הגדולים:"רדיו חזק" "תנו לי רוקנ'רול", "לראות אותה היום", "עוד פגישה",&nbsp;"יש לך&nbsp;&nbsp;אותי", "בוקר של כייף","פרצופה של המדינה, "כשאת בוכה את לא יפה, ורבים אחרים.&nbsp;וכמובן להיטי הענק&nbsp;מקריירות הסולו של חברי הלהקה:&nbsp;"ככלות הכול והתמונה" של דני בסן, "צילו של יום קיץ" של יזהר אשדות.
+
+                            <br>
+                            <br>
+                            חברי להקת תיסלם:
+
+                            <br>
+                            סמי אבזרדל – תופים
+
+                            <br>
+                            יזהר אשדות – גיטרה ושירה
+
+                            <br>
+                            דני בסן – שירה
+
+                            <br>
+                            יאיר ניצני – קלידים
+
+                            <br>
+                            יושי שדה – גיטרה ושירה
+
+                            <br>
+                            צוף פילוסוף – בס
+                        </span>
+                    </span>
+                </div>
+
+                <div style="text-align: justify;">
+                    <br>
+
+                    <span style="font-size:18px">
+                        <strong>
+                            <span style="color:#000000">אמפיתאטרון פארק מיני ישראל</span>
+                        </strong>
+                    </span>
+                </div>
+
+                <div style="text-align: justify;">
+                    <span style="color:#000000">
+                        <span style="font-size:14px">
+                            אמפיתאטרון פארק מיני ישראל הוא אמפי חדשני המכיל 1500 מקומות ישיבה, מצויד במערכות סאונד, תאורה ומולטימדיה מהמובילות בשוק המציע לכם ליהנות ממגוון הפקות מיוחדות והופעות מוזיקה איכותיות תחת המותג צוותא אמפי פארק.
+                        </span>
+                    </span>
+                </div>
+
+                <ul></ul>
+            </div>
+        </div>
+
+
+
+
+<div style="    text-align: left; padding-left: 40px;">
+  <div  style="display:inline-block; margin:10px; width:35%; flex-shrink: 0;" ng-repeat="coupon in [1,2,3]"  class="ng-scope">
+                        <!-- <card coupon="coupon"> -->
+
+                        <div>
+                            <div style="border: 1px solid #ddd">
+                                <div style="position:relative">
+                                    <img style="width:100%;" src="images/1.jpg">
+
+                                    <span style="padding:3px; display:inline-block; font-size:12px; background:#00B; position:absolute; right:0; bottom:0; color:white">אשקלונה החדשה</span>
+                                </div>
+
+                                <div style="display:inline-block; height:30px; background: white; width: 100%; text-align: right; font-size: 12px" class="ng-binding">טיסות רומנטיות בכדור פורח מעל פארק לכיש</div>
+                            </div>
+
+                            <div style="margin-top:5px;">
+                                <span style="width:40px; height:40px; background:#84449a; display:inline-block; color: white; overflow: hidden; font-size: 22px; text-align: center; line-height: 40px;">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </span>
+
+                                <div style="padding-right:10px; box-sizing: border-box; text-align: right; width: calc(100% - 45px);  line-height:40px; color:white; height:40px; background:#a7a135; display:inline-block; overflow: hidden;">
+                                    
+                                    <div style="font-size:18px; display:inline-block; color: #ccc;">
+                                        <span style="font-weight:normal;  text-decoration: line-through">10000</span>
+
+                                        <span>במקום</span>
+                                    </div>
+
+                                    <div style="font-weight:bold; display:inline-block">
+                                        <span>₪</span>
+
+                                        <span>2500</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+  </div>
+
+
+
+    </div>
+
+
+<iframe id="printf" src="print.html" name="printf" style="display:none"></iframe>
+
+
+
+    <script src="infoController.js"></script>
+</body>
+</html>

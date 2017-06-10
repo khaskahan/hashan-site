@@ -1,0 +1,137 @@
+<style>
+    @media print {
+        @page {
+            size: A4;
+        }
+    }
+</style>
+
+<script src="JsBarcode.all.min.js"></script>
+<!--<script src="jquery.js"></script>-->
+<script type="text/javascript" src="qrcode.js"></script>
+
+
+<div>
+    <div style="text-align:center; margin-bottom:10px; font-size:1cm">שובר הקופון</div>
+    <div style="font-size:1rem;">
+        <div style="text-align:right"><span>094479FC2A</span>&nbsp;<span style="direction:rtl; width:3cm; display:inline-block">קוד בטחון:</span></div>
+        <div style="text-align:right"><span>00102271YP</span>&nbsp;<span style="direction:rtl; width:3cm; display:inline-block">קוד שובר:</span></div>
+        <div style="text-align:right"><span>102759522</span>&nbsp;<span style="direction:rtl; width:3cm; display:inline-block">מספר עסקה:</span></div>
+    </div>
+</div>
+
+<div style="height:2px; margin: 5pt 0 5pt 0; background:black; width:100%;"></div>
+
+<div style="text-align:left">
+    <svg id="barcode"></svg>
+</div>
+
+
+<div style="text-align:right">
+    <div>שטיפה חיצונית לרכב</div>
+    <div><span>2017.02.24</span> <span>ניתן לממש את השובר עד לתאריך </span></div>
+    <div style=""> 
+        <span>ערך השובר:</span>
+        <span>480</span> 
+        <span>ש''ח</span> 
+        <span>סכום ששולם</span> 
+        <span>279</span> 
+        <span>ש''ח</span> 
+    </div>
+     
+
+</div>
+
+<ul style="direction:rtl; width:48%; float:right; display:inline-block">
+    <li>
+        <div>איך זה עובד?</div>
+        <div style="width:50%">כעיעכיעכיעכיעכיעכ
+עכיעכיעכיעכיעכי
+עכיעכיעכיעכיעכ
+עכיעכיעכיעכ
+האותיות הקטנות:
+חעיחעיחעיחעיח
+לילחילחיחליחיח
+ךםיחליחלילח
+לךיחלילחיחליחל
+ליחליחליחליחל
+ךןחוןחליחלילןח
+ךלחלך חעיחט
+חעיטחעיחע</div>
+    </li>
+    <li>
+                <div>האותיות הקטנות:</div>
+        <div style="width:50%">כעיעכיעכיעכיעכיעכ
+עחעיחעיחעיחעיח
+לילחילחיחליחיח
+ךםיחליחלילח
+לךיחלילחיחליחל
+ליחליחליחליחל
+ךןחוןחליחלילןח
+ךלחלך חעיחט
+חעיטחעיחע
+</div>
+    </li>
+
+        <li>
+                <div>הזכות לבטל עסקה</div>
+        <div style="width:50%">כניתן לבטל עסקה בכפוף לתקנון האתר</div>
+        <div style="width:50%"> <a href="http://www.hachan.co.il/forms_and_conditions">http://www.hachan.co.il/forms_and_conditions</a></div>
+    </li>
+</ul>
+
+
+
+
+<div style="text-align:right">
+    <div>>כתובת בית עסק:</div>
+    <div>
+גכלעגכעעגכ גכעכעכג 25
+גכעגכע גכעכגע גכעגכ
+    </div>
+</div>
+
+
+<div style="text-align:right; margin-top:10px">
+    <div>תנאים ומידע נוסף:</div>
+    <div>לךילחיחל חעיחנע חעחיעח
+    ליחליחל חעכעיכ כעיכעיהכ
+    ךליחל חכעיכי כיאעכעיה
+    ךחלך יכ כאעגכאגכעיכעיכיח
+    </div>
+</div>
+
+
+
+<div style="text-align:right; clear:both">
+    <div id="qrcode"></div>
+</div>
+
+
+
+<script>
+    JsBarcode("#barcode", "094479FC2A", {
+        format: "CODE128",
+        lineColor: "black",
+        width: 3,
+        height: 60,
+        displayValue: true
+    });
+
+// var qrcode = new QRCode("test", {
+//     text: "094479FC2A",
+//     width: 128,
+//     height: 128,
+//     colorDark : "#000000",
+//     colorLight : "#ffffff",
+//     correctLevel : QRCode.CorrectLevel.H
+// });
+
+var typeNumber = 4;
+var errorCorrectionLevel = 'L';
+var qr = qrcode(typeNumber, errorCorrectionLevel);
+qr.addData('www.google.com');
+qr.make();
+document.getElementById('qrcode').innerHTML = qr.createImgTag(4,20);
+
+</script>

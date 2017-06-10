@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html style="margin: 0px; padding: 0px;">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
+    <link rel="stylesheet" href="app.css"></link>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+
+</head>
+
+<body style="margin: 0px; padding: 0px;" ng-app="hashan" ng-controller="mainCtrl">
+    <div style="height: 100%; position:relative">
+        <div style="display:flex; flex-flow: column; height: 100%; background-color:#3d50a2;     background-size: 260px 220px; background-image: url('images/background-list.png'); align-items:center">
+            <div style="height:50px; background:purple; width:100%; display:flex;     flex-shrink: 0;">
+                <div style="display:flex;   width: 100%;">
+                    <div style="display:inline-block;  margin: auto 0; padding-left:5%;">
+                        <span style="display:inline-block">
+                            <span style="color:white">עגלת קניות</span>
+
+                        <span class="fa fa-cart-arrow-down" style="color:white">&nbsp;</span>
+                        </span>
+
+                        <span style="display:inline-block; margin-left:20px;">
+                            <span style="color:white">כניסה</span>
+
+                        <span style="color:white" class="fa fa-user">&nbsp;</span>
+                        </span>
+                    </div>
+
+                    <div style="display:inline-block; margin: auto 0; padding-right:5%; margin-left:auto; color:white; font-size:12px;">
+                        <span class="fa fa-map-marker" style="color:white">&nbsp;</span>
+
+                        <span>בחר ראש הממשלה</span>
+
+                        <input type="text" style="border-radius: 6px;"></input>
+                    </div>
+                </div>
+
+                <div></div>
+            </div>
+
+            <div style="display:flex;  flex-flow: column;  align-items: center; width: 100%; flex: 1 auto;  display: flex; justify-content: space-around; margin-top:20px; border-radius: 5px 5px 0 0">
+                <div style="width:90%; display:flex; height: 70px;">
+                    <div style="padding:5px; display:flex; flex-flow: row; width:100%; margin: 5px 0">
+                        <div class="fa fa-search" style="color: white; font-size: 22px; line-height: 28px; text-align: center;  width:50px; margin-left:20px; BORDER-RADIUS:4PX; height:30px; background: #32679F; margin-right:10px"></div>
+
+                        <input type="text" placeholder="חפש" style="direction: rtl; padding-right:10px; margin-right:20px;  height:30px; flex: 1 auto; border: 2px solid gold; border-radius:5px;"></input>
+                    </div>
+
+                    <span style="display:inline-block; color: white; text-align: right; padding-right: 20px;">
+                            <span style="display: inline-block; font-size: 25px;font-family: -webkit-body;">קנה קופון</span>
+                    <span style="display: inline-block; font-weight: bold; letter-spacing: 3.3px;">תהיה גאון</span>
+                    </span>
+
+                    <div style="position: relative; width: 100px">
+                        <img src="images/logo.png" style="height: 160px; position: absolute; top: -57px; right: -45px;">
+                    </div>
+
+
+                </div>
+
+                <div style="margin-bottom: 20px; width:90%;flex-wrap: wrap;  border-radius: 5px;   background: white;     display: flex;  justify-content: space-around;">
+                    <div style="height:40px; background: #aaa135;     border-color: white;  border-width: 8px 0 0 0; border-style: solid; border-radius: 10px 10px 0 0; width:100%; margin-bottom: 15px; direction: rtl; padding-right:10px">
+                        <span style="position:relative; display: inline-block; margin-left:40px; line-height:40px;  background-image: url('images/gold_button.jpg');"
+                            ng-repeat="m in menu">
+                            <span
+                                ng-click="openMenu(m)"
+                                style="cursor:pointer; color:white; font-size:18px; {{m.isActive ? 'color:red' : ''}}"
+                            >{{m.label}}</span>
+
+                        <span style="position: absolute; left: -19px; top: 2px; font-size: 11px; font-weight: bold; color:white; height: 12px; display: inline-block;line-height: 13px; padding: 2px;">{{m.count}}</span>
+
+                        <span style="display: inline-block; border-left: 2px solid #bbb; height: 29px; position: absolute; top: 0; left: -28px;"></span>
+                        </span>
+                    </div>
+
+                    <div ng-click="openCoupon(coupon)" style="display:inline-block; margin:10px; width:22%; flex-shrink: 0;" ng-repeat="coupon in coupons">
+                        <!-- <card coupon="coupon"> -->
+
+                        <div>
+                            <div style="border: 1px solid #ddd">
+                                <div style="position:relative">
+                                    <img style="width:100%;" src="images/1.jpg">
+
+                                    <span style="padding:3px; display:inline-block; font-size:12px; background:#00B; position:absolute; right:0; bottom:0; color:white">אשקלונה החדשה</span>
+                                </div>
+
+                                <div style="display:inline-block; height:30px; background: white; width: 100%; text-align: right; font-size: 12px">{{coupon.description}}</div>
+                            </div>
+
+                            <div style="margin-top:5px;">
+                                <span style="width:40px; height:40px; background:#84449a; display:inline-block; color: white; overflow: hidden; font-size: 22px; text-align: center; line-height: 40px;">
+                                    <!--<span class="fa fa-shopping-cart"></span>-->
+                                <img src="images/cart_bg.jpg">
+                                </span>
+
+                                <div style="padding-right:10px; box-sizing: border-box; text-align: right; width: calc(100% - 45px);  line-height:40px; color:white; height:40px; background:#a7a135; display:inline-block; overflow: hidden;">
+                                    <div style="font-size:18px; display:inline-block; color: #ccc;">
+                                        <span style="font-weight:normal;  text-decoration: line-through">10000</span>
+
+                                        <span>במקום</span>
+                                    </div>
+
+                                    <div style="font-weight:bold; display:inline-block">
+                                        <span>&#8362;</span>
+
+                                        <span>2500</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="overMenu" id="over-menu" style="box-shadow: 0px 0px 20px black; padding:10px; border-radius:6px; width:60%; height:60%; top:20%; left:20%;  background:rgba(220,220,220, 0.9); position:fixed">
+                <div ng-click="closeMenu(s)" style="cursor:pointer; text-align: right; padding-right:20px; display:inline-block; background:#555; color:white; border-radius:6px; width: 200px; margin:10px; line-height:30px; height:30px"
+                    ng-repeat="s in subMenu">{{s.text}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sideMenu {{sideMenuActive ? 'sideMenuOpened' : ''}}" style="z-index:2; position:absolute; -webkit-transition: width 2s; right:0; height: 80%; top:10%;  background: #ddd; overflow:hidden">
+        <div style="position:absolute; overflow:hidden; top:0; height:20px; background:white; width: 100%; text-align: right;">
+            <span style="overflow:hidden; width:200px">{{currentMenu.label}}</span>
+        </div>
+
+        <span ng-click="sideMenuActive = false" style="cursor:pointer; position:absolute; top:5px; left:5px;">X</span>
+    </div>
+
+    <div class="sideMenuHandler {{sideMenuActive ? 'sideMenuHandlerClosed' : ''}}" ng-click="sideMenuActive = !sideMenuActive"
+        style="">{{currentMenu.label}}</div>
+
+    <script src="mainController.js"></script>
+    <script src="card.js"></script>
+</body>
+
+</html>
