@@ -60,6 +60,19 @@ var initDb = function(callback) {
 };
 
 
+
+app.all('/*', function(req, res, next) {
+  console.log('Intercepting requests ...');
+  next();  // call next() here to move on to next middleware/router
+})
+
+
+app.use(function(req, res, next) {  
+  console.log('Called URL:', req.url);
+  next();
+});
+
+
 app.use('/app', express.static(path.join(__dirname, 'site')))
 
 
